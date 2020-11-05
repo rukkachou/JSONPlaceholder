@@ -1,4 +1,4 @@
-package com.rukka.jsonplaceholder
+package com.rukka.jsonplaceholder.overview
 
 import android.os.Bundle
 import android.view.LayoutInflater

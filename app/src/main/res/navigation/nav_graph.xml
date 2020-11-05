@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/overViewFragment"
-        android:name="com.rukka.jsonplaceholder.OverviewFragment"
+        android:name="com.rukka.jsonplaceholder.overview.OverviewFragment"
         android:label="over_view_fragment"
         tools:layout="@layout/over_view_fragment" />
 </navigation>

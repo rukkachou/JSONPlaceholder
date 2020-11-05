@@ -1,4 +1,4 @@
-package com.rukka.jsonplaceholder
+package com.rukka.jsonplaceholder.overview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,9 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rukka.jsonplaceholder.databinding.OverViewItemBinding
 import com.rukka.jsonplaceholder.networks.Property
 
-class Adapter : ListAdapter<Property, Adapter.ViewHolder>(
-    DiffCallback()
-) {
+class Adapter : ListAdapter<Property, Adapter.ViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)
