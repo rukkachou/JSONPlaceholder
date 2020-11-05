@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.rukka.jsonplaceholder.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_overViewFragment"
+            app:destination="@id/overViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/overViewFragment"
+        android:name="com.rukka.jsonplaceholder.OverviewFragment"
+        android:label="over_view_fragment"
+        tools:layout="@layout/over_view_fragment" />
+</navigation>

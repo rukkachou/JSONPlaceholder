@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">JSONPlaceholder</string>
+    <string name="app_name">JSON Placeholder</string>
+    <string name="request_api">Request API</string>
 </resources>
