@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rukka.jsonplaceholder.detail.DetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".detail.DetailFragment">
+
+
+        <ImageView
+            android:id="@+id/image_detail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{viewModel.selectedItem.imageUrl}"
+            app:layout_constraintDimensionRatio="h, 1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/text_detail_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{viewModel.seletctedId}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/background_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_detail"
+            tools:text="id: 5000" />
+
+        <TextView
+            android:id="@+id/text_detail_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{viewModel.seletctedTitle}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/background_dark"
+            app:layout_constraintEnd_toEndOf="@+id/text_detail_id"
+            app:layout_constraintStart_toStartOf="@+id/text_detail_id"
+            app:layout_constraintTop_toBottomOf="@+id/text_detail_id"
+            tools:text="title: error quasi sunt cupiditate voluptate ea odit beata" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

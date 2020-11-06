@@ -23,6 +23,10 @@ class OverviewViewModel : ViewModel() {
     val status : LiveData<Status>
         get() = _status
 
+    private val _navigateToSelectedProperty = MutableLiveData<Property>()
+    val navigateToSelectedProperty: LiveData<Property>
+        get() = _navigateToSelectedProperty
+
     init {
         _status.value = Status.LOADING
         refreshData()
@@ -38,5 +42,13 @@ class OverviewViewModel : ViewModel() {
                 _status.value = Status.FAILED
             }
         }
+    }
+
+    fun displayDetailProperty(property: Property) {
+        _navigateToSelectedProperty.value = property
+    }
+
+    fun displayDetailPropertyCompleted() {
+        _navigateToSelectedProperty.value = null
     }
 }
