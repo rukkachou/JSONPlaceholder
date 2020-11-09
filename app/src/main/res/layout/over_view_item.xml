@@ -18,6 +18,7 @@
             android:id="@+id/image_item"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:contentDescription="@string/description_song_thumbnail"
             android:scaleType="centerCrop"
             app:imageUrl="@{property.thumbnailImageUrl}"
             app:layout_constraintDimensionRatio="h, 1:1"

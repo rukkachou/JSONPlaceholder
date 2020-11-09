@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">JSON Placeholder</string>
     <string name="request_api">Request API</string>
+    <string name="description_song_thumbnail">thumbnail of the song</string>
+    <string name="description_song_image">image of the song</string>
+    <string name="description_loading_status">loading status</string>
 </resources>

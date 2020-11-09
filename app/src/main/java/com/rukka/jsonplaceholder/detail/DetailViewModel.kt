@@ -8,11 +8,11 @@ class DetailViewModel(property: Property) : ViewModel() {
     val selectedItem: LiveData<Property>
         get() = _selectedItem
 
-    val seletctedId = Transformations.map(_selectedItem) {
+    val selectedId = Transformations.map(_selectedItem) {
         "Id: " + it.id
     }
 
-    val seletctedTitle = Transformations.map(_selectedItem) {
+    val selectedTitle = Transformations.map(_selectedItem) {
         "Title: " + it.title
     }
 
@@ -22,11 +22,11 @@ class DetailViewModel(property: Property) : ViewModel() {
 }
 
 class DetailViewModelFactory(private val property: Property) : ViewModelProvider.Factory {
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DetailViewModel::class.java)) {
             return DetailViewModel(property) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
-
 }
