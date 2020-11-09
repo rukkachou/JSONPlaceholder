@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.rukka.jsonplaceholder.databinding.OverViewFragmentBinding
 
 class OverviewFragment : Fragment() {
@@ -31,7 +32,15 @@ class OverviewFragment : Fragment() {
         })
         binding.recyclerView.adapter = adapter
         viewModel.allData.observe(viewLifecycleOwner, Observer {
-            adapter.submitList(it)
+            adapter.submitList(it.toList())
+        })
+        binding.recyclerView.addOnScrollListener(object: RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (!recyclerView.canScrollVertically(1)) {
+                    viewModel.loadMore()
+                }
+            }
         })
         viewModel.navigateToSelectedProperty.observe(viewLifecycleOwner, Observer { property ->
                 property?.let {
